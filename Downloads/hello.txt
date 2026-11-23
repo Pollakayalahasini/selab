@@ -1,0 +1,20 @@
+1.docker with dockerfile
+directory create
+navigate
+dockerfile write
+docker build -t redis .
+docker run --name redis -d redis
+docker login
+docker ps -a
+docker commit conitainerid userid/redis
+docker images
+docker push userid/redis
+2.kubernetes
+kubectl create deployment redis(name) --image=nginx
+kubectl scale deployment redis --replicas=3
+kubectl expose deployment redis --type=NodePort --port=80 --target-port=80
+kubectl get services
+kubectl port-forward svc/redis 8083:80
+3.naigos
+docker pull jasonrivers/naigos:latest
+docker run -d --name nagios -p 8081:80 jasonrivers/naigos:latest
